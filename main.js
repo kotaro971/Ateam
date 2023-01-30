@@ -10,16 +10,31 @@ let answerjudge=[
     ["比較"]
 ]
 
-let count=[
-    ["正解数"]
-]
+let answercount=0
 
+let count=0
+
+//問題を表示させる関数
+function quest(){
+
+}
+//入力フォーム
+function write(){
+    var a=document.getElementsByName('a')
+answerjudge[count]=a
+
+}
+//解答ボタン
+//判定関数
 function judge(){
-    if() {
+    if(answer[count]==answerjudge[count]) {
         //正解
+        answercount+=answercount
+        count+=count
     }
-    else(){
+    else{
         //不正解
+        count+=count
     }
 }
 
