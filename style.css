@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    margin-top: 30%;
+    font-size: 400%;
+}
+
+.start-button{
+    text-align: center;
+}
+.str-btn{
+    font-size: 50px;
+}
+.str-btn:hover{
+    background-color: black;
+    color: aliceblue;
+}
+
+
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+.ans{
+    width: 50%;
+    height: 70px;
+    font-size: 30px;
+}
+.ans-button{
+    font-size: 20px;
+    height: 70px;
+    margin-left: 10px;
+}
