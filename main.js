@@ -1,8 +1,7 @@
 
 let kaitoi
 let quiz = [
-
-    [""]
+    './img/qiuz1.png','./img/qiuz2.png'
 ]  //問題
 let answer = [
 
