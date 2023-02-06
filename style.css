@@ -1,6 +1,9 @@
+body{
+    font-family: 'Kaisei HarunoUmi', serif;
+}
 h1{
     text-align: center;
-    margin-top: 30%;
+    margin-top: 300px;
     font-size: 400%;
 }
 
@@ -9,10 +12,12 @@ h1{
 }
 .str-btn{
     font-size: 50px;
+    font-family: 'Kaisei HarunoUmi', serif;
 }
 .str-btn:hover{
     background-color: black;
     color: aliceblue;
+    cursor: url(hand.cur), pointer;
 }
 
 
@@ -27,7 +32,9 @@ h1{
     font-size: 30px;
 }
 .ans-button{
+    font-family: 'Kaisei HarunoUmi', serif;
     font-size: 20px;
     height: 70px;
     margin-left: 10px;
+    font-weight: bold;
 }
