@@ -1,7 +1,7 @@
 
 let kaitoi
 const quiz = [
-    "380.png", 
+    "380.png",
     "384.png"];
 
 
@@ -71,34 +71,35 @@ function quest() {
 
 
 
-    count += count;
+
 }
 //入力フォーム
-var btn = document.getElementsByClassName('ans-button')[0].addEventListener('click', function () {
-   
-    var ans = document.getElementsByClassName("ans")[0];
-    answer[count] = ans;
-    
-console.log(answer[count].value);
-console.log(ans.value);
-judge();
+var btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
 
-    //解答ボタン
-    //function button() {
+    var ans = document.getElementsByClassName("ans")[count];
+    answer[count] = ans[count];
 
-    //judge();
+    console.log(answer[count]);
+    console.log(ans.value);
 
+    judge();
 });
 
 
 //判定関数
 function judge() {
-    if (answer[count].value === answerjudge[count]) {
+    if (answer[count] === answerjudge[count]) {
         //正解
         answercount += answercount;
 
+        console.log(count);
         window.alert("正解です!");
-        count += count;
+        count = count + 1;
+        console.log(count);
+        console.log(answer[count]);
+        ans.removeAttribute("value");
+
+        return quest();
     }
     else {
         //不正解
