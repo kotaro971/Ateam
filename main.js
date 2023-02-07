@@ -64,7 +64,7 @@ quest();
 console.log(quiz[0]);
 //問題を表示させる関数
 function quest() {
-    document.querySelector("quizimg").src="img/"  +quiz[count];
+    document.querySelector(".quizimg").src="img/"  +quiz[count];
     //"<img src=" +quiz[0]+">";
     console.log(mondai)
 
