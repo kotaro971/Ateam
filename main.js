@@ -59,27 +59,26 @@ let count = 0;
 
 quest();
 
-
+    function quest() {
+        document.querySelector(".quizimg").src = "img/" + quiz[count];
+     
+    }
 //問題を表示させる関数
-function quest() {
-    document.querySelector(".quizimg").src = "img/" + quiz[count];
-    //"<img src=" +quiz[0]+">";
+//for (let i = 0; i <= 5; i++) {
+
+    //入力フォーム
+    var btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
+
+        const ans = document.getElementsByClassName("ans")[count];
+        answer[count] = ans;
+
+        console.log(answer[count].value);
 
 
+        judge();
+    });
+//}
 
-
-}
-//入力フォーム
-var btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
-
-    const ans = document.getElementsByClassName("ans")[count];
-    answer[count] = ans;
-
-    console.log(answer[count]);
-
-
-    judge();
-});
 
 
 //判定関数
