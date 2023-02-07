@@ -1,10 +1,7 @@
 
 let kaitoi
-var quiz = new Array();
-quiz[0] = new Image();
-quiz[0].src = 'img/380.png';
-quiz[1] = new Image();
-quiz[1].src = "img/384.png";
+const quiz = ["img/380.png","img/384.png"];
+
 
 //問題
 let answer = [
@@ -27,8 +24,7 @@ quest();
 console.log(quiz[0]);
 //問題を表示させる関数
 function quest() {
-    var mondai = document.getElementsByClassName("mondai");
-    mondai.innerHTML = '<P>画像</P>';
+    document.querySelector("quizimg").src="img/"  +quiz[count];
     //"<img src=" +quiz[0]+">";
     console.log(mondai)
 
