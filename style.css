@@ -1,7 +1,11 @@
-h1{
+body{
+    font-family: 'Kaisei HarunoUmi', serif;
+}
+.quiz-title{
     text-align: center;
-    margin-top: 30%;
+    margin-top: 300px;
     font-size: 400%;
+    text-shadow: 10px 6px 3px #cccbcb;
 }
 
 .start-button{
@@ -9,10 +13,18 @@ h1{
 }
 .str-btn{
     font-size: 50px;
+    font-family: 'Kaisei HarunoUmi', serif;
+    padding: 10px 20px;
+    border: solid 1px #000000;
+    outline: none;
+    /* background: transparent; */
+    border-radius:13px;
+    box-shadow: 7px 6px 3px #cccbcb;
 }
 .str-btn:hover{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: aliceblue;
+    cursor: url(hand.cur), pointer;
 }
 
 
@@ -27,7 +39,17 @@ h1{
     font-size: 30px;
 }
 .ans-button{
+    font-family: 'Kaisei HarunoUmi', serif;
     font-size: 20px;
     height: 70px;
     margin-left: 10px;
+    font-weight: bold;
+}
+
+.quiz{
+    border: solid 3px #000000;
+    margin: 50px;
+    padding-bottom: 250px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px #979797;
 }

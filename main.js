@@ -1,8 +1,9 @@
 
 let kaitoi
-let quiz = [
-    './img/qiuz1.png','./img/qiuz2.png'
-]  //問題
+const quiz = ["img/380.png","img/384.png"];
+
+
+//問題
 let answer = [
 
     ["クローバー"]//470
@@ -51,14 +52,23 @@ let answerjudge = [
     
 ]   //答え(比較用)
 
+
+
+
 let answercount = 0;
 
 let count = 0;
 
+quest();
+
+console.log(quiz[0]);
 //問題を表示させる関数
 function quest() {
-    var mondai = document.getElementsByClassName("mondai");
-    mondai = quiz[count];
+    document.querySelector("quizimg").src="img/"  +quiz[count];
+    //"<img src=" +quiz[0]+">";
+    console.log(mondai)
+
+
     count += count;
 }
 //入力フォーム
