@@ -6,14 +6,10 @@ const quiz = [
 
 
 //問題
-let answer = [
-
-
-
-]//答え(入力)
+let answer = []//答え(入力)
 let answerjudge = [
     "クローバー",//470
-    "",
+    "あああ",
     "アーモンド",//466
     "メロン",//464
     "ほうこう",//463
@@ -76,11 +72,11 @@ function quest() {
 //入力フォーム
 var btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
 
-    var ans = document.getElementsByClassName("ans")[count];
-    answer[count] = ans[count];
+    const ans = document.getElementsByClassName("ans")[count];
+    answer[count] = ans;
 
     console.log(answer[count]);
-    console.log(ans.value);
+
 
     judge();
 });
@@ -88,7 +84,7 @@ var btn = document.getElementsByClassName('ans-button')[count].addEventListener(
 
 //判定関数
 function judge() {
-    if (answer[count] === answerjudge[count]) {
+    if (answer[count].value == answerjudge[count]) {
         //正解
         answercount += answercount;
 
@@ -96,17 +92,23 @@ function judge() {
         window.alert("正解です!");
         count = count + 1;
         console.log(count);
-        console.log(answer[count]);
-        ans.removeAttribute("value");
+        console.log(ans.value);
+        document.getElementById("ans").value = '';
 
         return quest();
     }
     else {
         //不正解
         window.alert("残念！正解は" + answerjudge[count] + "です。");
-        count += count;
+        count = count + 1;
+        console.log(count);
+        console.log(ans.value);
+        document.getElementById("ans").value = '';
+
+        return quest();
     }
 }
+
 
 
 
