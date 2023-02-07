@@ -3,9 +3,9 @@ body{
 }
 .quiz-title{
     text-align: center;
-    margin-top: 300px;
-    font-size: 400%;
-    text-shadow: 10px 6px 3px #cccbcb;
+    margin-top: 250px;
+    font-size: 600%;
+    text-shadow: 13px 6px 3px #c9c7c7;
 }
 
 .start-button{
@@ -15,16 +15,22 @@ body{
     font-size: 50px;
     font-family: 'Kaisei HarunoUmi', serif;
     padding: 10px 20px;
-    border: solid 1px #000000;
+    border: none;
     outline: none;
     /* background: transparent; */
     border-radius:13px;
-    box-shadow: 7px 6px 3px #cccbcb;
+    box-shadow: 5px 6px 3px #cccbcb;
+    color: #000000;
+    background-color: #c2c2c2;
+    border-bottom: 7px solid #494949;
 }
 .str-btn:hover{
-    background-color: rgb(0, 0, 0);
-    color: aliceblue;
-    cursor: url(hand.cur), pointer;
+    margin-top: 3px;
+    color: #000000;
+    background: #c2c2c2;
+    border-bottom: 2px solid #494949;
+    /* cursor: url(hand.cur), pointer; */
+    margin-bottom: 2px;
 }
 
 
