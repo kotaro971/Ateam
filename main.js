@@ -98,13 +98,30 @@ var randams = []
 
 quest();
 
+//入力フォーム　クリックでイベント発火
+const btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
+    console.log(count);
+
+    var ans = document.getElementsByClassName("ans")[0];
+    answer = ans.value;
+    count = count + 1;
+    judge();
+});
+
 //問題を表示させる関数
 function quest() {
-    randamfunc();
-    document.querySelector(".quizimg").src = "img/" + quiz[randamnum]; 
     if (count == 10) {
         result();
+        document.querySelector(".quizimg").style.visibility = "hidden";
+        document.querySelector(".ans").style.visibility = "hidden";
+        document.querySelector(".ans-button").style.visibility = "hidden";
     }
+    else {
+        randamfunc();
+        document.querySelector(".quizimg").src = "img/" + quiz[randamnum];
+    }
+
+
 }
 
 //問題をランダム表示
@@ -118,15 +135,8 @@ function randamfunc() {
     }
 }
 
-//入力フォーム
-const btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
-    console.log(count);
-   
-    var ans = document.getElementsByClassName("ans")[0];
-    answer = ans.value;
-    count = count + 1;
-    judge();
-});
+
+
 
 //判定関数
 function judge() {
@@ -152,10 +162,12 @@ function judge() {
     }
 }
 
+//結果発表ボタンを追加する関数
 function result() {
-    const btnfi = document.getElementsByClassName('ans-button')[0];
-    var resultbtn = '<input type="button" value="結果発表"></input>'
-    btnfi.innerHTML = resultbtn;
+    const btnadd = document.createElement("button")
+    // const btnadd = document.getElementsByClassName('ans-button')[0];
+    btnadd.innerHTML = "結果発表";
+    document.body.appendChild(btnadd);
 }
 
 
