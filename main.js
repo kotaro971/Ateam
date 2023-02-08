@@ -84,21 +84,37 @@ let answerjudge = [
     "きなこ",//439
     "しきしゃ"//442
 ]   //答え(比較用)
+
 var answer ;//答え(入力)
 
-let answercount = 0;
+let answercount = 0;//正解数の個数
 
-let count = 0;
+let count = 0;//
 
-var randamnum=0
+var randamnum=0;
+
+var randams=[]
+
 
 quest();
 
 //問題を表示させる関数
 function quest() {
-    randamnum = Math.floor(Math.random() *40)
+   randamfunc();
+    // randamnum = Math.floor(Math.random() *40) ;
     document.querySelector(".quizimg").src = "img/" + quiz[randamnum];
 }
+
+function randamfunc(){
+     while(true){
+        randamnum = Math.floor(Math.random() *40) ;
+      if(!randams.includes(randamnum)){
+       randams.push(randamnum)
+       break;
+       }
+    }
+}
+
 
 //入力フォーム
 const btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
@@ -118,9 +134,7 @@ function judge() {
         console.log(count);
         window.alert("正解です!");
         count = count + 1;
-        console.log(count);
-        console.log(ans.value);
-        console.log(answer);
+       
         document.getElementById("ans").value = '';
 
         return quest();
@@ -129,9 +143,7 @@ function judge() {
         //不正解
         window.alert("残念！正解は" + answerjudge[randamnum] + "です。");
         count = count + 1;
-        console.log(count);
-        console.log(ans.value);
-        console.log(answer);
+    console.log(randamnum);
         document.getElementById("ans").value = '';
 
         return quest();
