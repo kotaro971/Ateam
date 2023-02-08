@@ -85,42 +85,46 @@ let answerjudge = [
     "しきしゃ"//442
 ]   //答え(比較用)
 
-var answer ;//答え(入力)
+var answer;//答え(入力)
 
 let answercount = 0;//正解数の個数
 
 let count = 0;//
 
-var randamnum=0;
+var randamnum = 0;
 
-var randams=[]
+var randams = []
 
 
 quest();
 
 //問題を表示させる関数
 function quest() {
-   randamfunc();
-    // randamnum = Math.floor(Math.random() *40) ;
-    document.querySelector(".quizimg").src = "img/" + quiz[randamnum];
-}
-
-function randamfunc(){
-     while(true){
-        randamnum = Math.floor(Math.random() *40) ;
-      if(!randams.includes(randamnum)){
-       randams.push(randamnum)
-       break;
-       }
+    randamfunc();
+    document.querySelector(".quizimg").src = "img/" + quiz[randamnum]; 
+    if (count == 10) {
+        result();
     }
 }
 
+//問題をランダム表示
+function randamfunc() {
+    while (true) {
+        randamnum = Math.floor(Math.random() * 40);
+        if (!randams.includes(randamnum)) {
+            randams.push(randamnum)
+            break;
+        }
+    }
+}
 
 //入力フォーム
 const btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
-
+    console.log(count);
+   
     var ans = document.getElementsByClassName("ans")[0];
     answer = ans.value;
+    count = count + 1;
     judge();
 });
 
@@ -128,27 +132,33 @@ const btn = document.getElementsByClassName('ans-button')[count].addEventListene
 function judge() {
     //正解
     if (answer == answerjudge[randamnum]) {
-
-        answercount = answercount+1;
-
-        console.log(count);
-        window.alert("正解です!");
-        count = count + 1;
-       
-        document.getElementById("ans").value = '';
-
-        return quest();
+        if (count < 11) {
+            answercount = answercount + 1;
+            window.alert("正解です!");
+            document.getElementById("ans").value = '';
+            console.log(count);
+            return quest();
+        }
     }
     else {
         //不正解
-        window.alert("残念！正解は" + answerjudge[randamnum] + "です。");
-        count = count + 1;
-    console.log(randamnum);
-        document.getElementById("ans").value = '';
+        if (count < 11) {
+            window.alert("残念！正解は" + answerjudge[randamnum] + "です。");
+            document.getElementById("ans").value = '';
+            console.log(count);
+            return quest();
+        }
 
-        return quest();
     }
 }
+
+function result() {
+    const btnfi = document.getElementsByClassName('ans-button')[0];
+    var resultbtn = '<input type="button" value="結果発表"></input>'
+    btnfi.innerHTML = resultbtn;
+}
+
+
 
 
 
