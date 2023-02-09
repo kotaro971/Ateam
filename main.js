@@ -112,9 +112,6 @@ const btn = document.getElementsByClassName('ans-button')[count].addEventListene
 function quest() {
     if (count == 10) {
         result();
-        document.querySelector(".quizimg").style.visibility = "hidden";
-        document.querySelector(".ans").style.visibility = "hidden";
-        document.querySelector(".ans-button").style.visibility = "hidden";
     }
     else {
         randamfunc();
@@ -134,9 +131,6 @@ function randamfunc() {
         }
     }
 }
-
-
-
 
 //判定関数
 function judge() {
@@ -164,10 +158,30 @@ function judge() {
 
 //結果発表ボタンを追加する関数
 function result() {
-    const btnadd = document.createElement("button")
-    // const btnadd = document.getElementsByClassName('ans-button')[0];
-    btnadd.innerHTML = "結果発表";
-    document.body.appendChild(btnadd);
+    document.querySelector(".quizimg").style.visibility = "hidden";
+    document.querySelector(".ans").style.visibility = "hidden";
+    document.querySelector(".ans-button").style.visibility = "hidden";
+
+    const btnAdd = document.createElement("button");
+    btnAdd.style.position="absolute";
+    btnAdd.style.top="38%";
+    btnAdd.style.left="32%";
+   
+    btnAdd.innerHTML = "結果発表";
+    document.body.appendChild(btnAdd);
+    btnAdd.addEventListener(`click`, function () {
+        btnAdd.style.visibility = "hidden";
+        resultUI();
+    });
+}
+
+function resultUI(){
+    const resultText=document.createElement("p");
+    resultText.innerHTML="あなたが正解した数は"+answercount+"/10です。"
+    document.body.appendChild(resultText);
+    resultText.style.position="absolute";
+    resultText.style.top="38%";
+    resultText.style.left="32%";
 }
 
 
