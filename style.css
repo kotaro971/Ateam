@@ -34,6 +34,14 @@ body{
 }
 
 
+.quizimg2{
+    display: flex;
+    justify-content: center;
+}
+.quizimg{
+    width: 50%;
+    height: auto;
+}
 
 .form{
     display: flex;
@@ -41,6 +49,7 @@ body{
 }
 .ans{
     width: 50%;
+    max-width: 500px;
     height: 70px;
     font-size: 30px;
 }
