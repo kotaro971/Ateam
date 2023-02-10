@@ -43,26 +43,10 @@ const quiz = [
 ];
 
 let answerjudge = [
-  
-    
-    
-    
-   
-    
-    
-    
-   
-   
-    
-    
-    
-    
-   
-    
-    "がっこう",//389
-    "あくま",//386
-    "ソーセージ",//384
     "カメラ",//380
+    "ソーセージ",//384
+    "あくま",//386
+    "がっこう",//389
     "明日",//394
     "ICE",//395
     "ペリカン",//397
@@ -88,7 +72,6 @@ let answerjudge = [
     "タカラ",//437
     "きなこ",//439
     "しきしゃ",//442
-    
     "とかい",//450
     "すくーる",//451
     "よくじつ",//454
@@ -96,10 +79,10 @@ let answerjudge = [
     "へんかん",//459
     "ダンサー",//460
     "ほうこう",//463 
-    "メロン",//464
+    "めろん",//464
     "コーヒー",//465
     "アーモンド",//466
-     "クローバー"//470
+    "クローバー"//470
 ]   //答え(比較用)
 
 var answer;//答え(入力)
@@ -180,10 +163,10 @@ function result() {
     document.querySelector(".ans-button").style.visibility = "hidden";
 
     const btnAdd = document.createElement("button");
-    btnAdd.style.position="absolute";
-    btnAdd.style.top="38%";
-    btnAdd.style.left="32%";
-   
+    btnAdd.style.position = "absolute";
+    btnAdd.style.top = "38%";
+    btnAdd.style.left = "32%";
+
     btnAdd.innerHTML = "結果発表";
     document.body.appendChild(btnAdd);
     btnAdd.addEventListener(`click`, function () {
@@ -192,13 +175,13 @@ function result() {
     });
 }
 
-function resultUI(){
-    const resultText=document.createElement("p");
-    resultText.innerHTML="あなたが正解した数は"+answercount+"/10です。"
+function resultUI() {
+    const resultText = document.createElement("p");
+    resultText.innerHTML = "あなたが正解した数は" + answercount + "/10です。"
     document.body.appendChild(resultText);
-    resultText.style.position="absolute";
-    resultText.style.top="38%";
-    resultText.style.left="32%";
+    resultText.style.position = "absolute";
+    resultText.style.top = "38%";
+    resultText.style.left = "32%";
 }
 
 
