@@ -170,32 +170,21 @@ function result() {
     btnAdd.style.left = "40%";
     btnAdd.style.fontSize="50px";
     btnAdd.style.color="#b1921b";
-        btnAdd.style.borderRight="4px solid #cea82c";
-        btnAdd.style.borderBottom= "10px solid #987c1e";
-        btnAdd.style.borderLeft= "4px solid #ffed8b";
-        btnAdd.style.borderRadius= 0;
-        btnAdd.style.background="-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
-        btnAdd.style.background= "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
-        btnAdd.style.background= "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
-        btnAdd.style.textShadow="-1px -1px 1px #ffffd9";
-    // btnAdd.style.border="none";
-    // btnAdd.style.outline = "none";
-    // btnAdd.style.borderRadius="13px";
-    // btnAdd.style.boxShadow= "5px 6px 3px #cccbcb";
-    // btnAdd.style.color= "#000000";
-    // btnAdd.style.backgroundColor= "#c2c2c2";
-    // btnAdd.style.borderBottom="7px solid #494949";
+    btnAdd.style.borderRight="4px solid #cea82c";
+    btnAdd.style.borderBottom= "10px solid #987c1e";
+    btnAdd.style.borderLeft= "4px solid #ffed8b";
+    btnAdd.style.borderRadius= 0;
+    btnAdd.style.background="-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
+    btnAdd.style.background= "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+    btnAdd.style.background= "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+    btnAdd.style.textShadow="-1px -1px 1px #ffffd9";
+    
     btnAdd.addEventListener('mouseover', function() {
         btnAdd.style.marginTop= "3px";
         btnAdd.style.color= "#b1921b";
         btnAdd.style.borderRight= "4px solid #cea82c";
         btnAdd.style.borderBottom= "7px solid #987c1e";
         btnAdd.style.borderLeft= "4px solid #ffed8b";
-        // btnAdd.style.marginTop= "3px";
-        // btnAdd.style.color= "#ff0000";
-        // btnAdd.style.background ="#c2c2c2";
-        // btnAdd.style.borderBottom= "2px solid #494949";
-        // btnAdd.style.marginBottom= "2px";
     });
     btnAdd.addEventListener('mouseleave', function() {
         btnAdd.style.marginTop= "-3px";
@@ -208,12 +197,6 @@ function result() {
         btnAdd.style.background= "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
         btnAdd.style.background= "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
         btnAdd.style.textShadow="-1px -1px 1px #ffffd9";
-        // btnAdd.style.marginTop= "-3px";
-        // btnAdd.style.borderRadius="13px";
-        // btnAdd.style.boxShadow= "5px 6px 3px #cccbcb";
-        // btnAdd.style.color= "#000000";
-        // btnAdd.style.backgroundColor= "#c2c2c2";
-        // btnAdd.style.borderBottom="7px solid #494949";
       });
 
     btnAdd.innerHTML = "結果発表";
@@ -229,8 +212,11 @@ function resultUI() {
     resultText.innerHTML = "あなたが正解した数は" + answercount + "/10です。"
     document.body.appendChild(resultText);
     resultText.style.position = "absolute";
-    resultText.style.top = "38%";
+    resultText.style.fontSize="30px";
+    resultText.style.top = "400px";
     resultText.style.left = "32%";
+    resultText.style.justifyContent="center";
+    
 }
 
 
