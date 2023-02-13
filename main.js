@@ -40,7 +40,7 @@ const quiz = [
     "465.png",
     "466.png",
     "470.png"
-];
+];//問題の画像
 
 let answerjudge = [
     "カメラ",//380
@@ -64,9 +64,9 @@ let answerjudge = [
     "ようき",//425
     "ましかく",//428
     "マウンド",//431
-    "きゅうこうばい",//432
-    "カタカナ",//434
+    "きゅうこうばい",//432 
     "しきべつ",//433
+    "カタカナ",//434
     "マスク",//435
     "そのばしのぎ",//436
     "タカラ",//437
@@ -75,7 +75,7 @@ let answerjudge = [
     "とかい",//450
     "すくーる",//451
     "よくじつ",//454
-    "やけど",//458
+    "ヤケド",//458
     "へんかん",//459
     "ダンサー",//460
     "ほうこう",//463 
@@ -89,32 +89,32 @@ var answer;//答え(入力)
 
 let answercount = 0;//正解数の個数
 
-let count = 0;//
+let count = 0;//問題数のカウント
 
-var randamnum = 0;
+var randamnum = 0;//ランダムの数を入れる変数
 
-var randams = []
+var randams = []//一度出たrandamnumを格納
 
 
-quest();
+quest();//問題を表示させる関数呼び出し
 
 //入力フォーム　クリックでイベント発火
 const btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
     console.log(count);
 
-    var ans = document.getElementsByClassName("ans")[0];
-    answer = ans.value;
-    count = count + 1;
-    judge();
+    var ans = document.getElementsByClassName("ans")[0];//ansのDOM取得
+    answer = ans.value;//ansの入力値をanswerに代入
+    count = count + 1;//問題数のカウントを進める
+    judge();//判定の関数呼び出し
 });
 
 //問題を表示させる関数
 function quest() {
-    if (count == 10) {
+    if (count == 10) {//問題数が１０問なら関数呼び出し
         result();
     }
     else {
-        randamfunc();
+        randamfunc();//10問以下なら問題を出す
         document.querySelector(".quizimg").src = "img/" + quiz[randamnum];
     }
 
@@ -124,9 +124,9 @@ function quest() {
 //問題をランダム表示
 function randamfunc() {
     while (true) {
-        randamnum = Math.floor(Math.random() * 40);
-        if (!randams.includes(randamnum)) {
-            randams.push(randamnum)
+        randamnum = Math.floor(Math.random() * quiz.length);//ランダムで出た数字を小数点以下切り捨て
+        if (!randams.includes(randamnum)) {//randamnumをrandamsに入れる
+            randams.push(randamnum)//既にある数字なら削除
             break;
         }
     }
@@ -135,13 +135,13 @@ function randamfunc() {
 //判定関数
 function judge() {
     //正解
-    if (answer == answerjudge[randamnum]) {
-        if (count < 11) {
-            answercount = answercount + 1;
+    if (answer == answerjudge[randamnum]) {//answerとanswerjudgeが同じ値の時
+        if (count < 11) {//countが11未満の時
+            answercount = answercount + 1;//answercountを+1
             window.alert("正解です!");
-            document.getElementById("ans").value = '';
+            document.getElementById("ans").value = '';//入力フォームをクリアにする
             console.log(count);
-            return quest();
+            return quest();//再度問題表示関数の呼び出し
         }
     }
     else {
@@ -158,27 +158,31 @@ function judge() {
 
 //結果発表ボタンを追加する関数
 function result() {
+    //問題の画像・入力フォーム・ボタンのを画面から消す
     document.querySelector(".quizimg").style.visibility = "hidden";
     document.querySelector(".ans").style.visibility = "hidden";
     document.querySelector(".ans-button").style.visibility = "hidden";
 
-    const btnAdd = document.createElement("button");
+    const btnAdd = document.createElement("button");//ボタンの追加
+    //ボタンの位置
     btnAdd.style.position = "absolute";
     btnAdd.style.top = "38%";
     btnAdd.style.left = "32%";
 
-    btnAdd.innerHTML = "結果発表";
-    document.body.appendChild(btnAdd);
-    btnAdd.addEventListener(`click`, function () {
-        btnAdd.style.visibility = "hidden";
-        resultUI();
+    btnAdd.innerHTML = "結果発表";//ボタンのテキスト
+    document.body.appendChild(btnAdd);//HTMLのbodyにボタンを表示
+    btnAdd.addEventListener(`click`, function () {//追加されたボタンがクリック
+        btnAdd.style.visibility = "hidden";//ボタンを画面から消す
+        resultUI();//結果発表関数の呼び出し
     });
 }
 
+//結果を表示させる関数
 function resultUI() {
-    const resultText = document.createElement("p");
-    resultText.innerHTML = "あなたが正解した数は" + answercount + "/10です。"
+    const resultText = document.createElement("p");//テキストの追加
+    resultText.innerHTML = "あなたが正解した数は" + answercount + "/10です。"//HTMLにテキストの表示
     document.body.appendChild(resultText);
+    //テキストの位置
     resultText.style.position = "absolute";
     resultText.style.top = "38%";
     resultText.style.left = "32%";
