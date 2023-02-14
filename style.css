@@ -11,8 +11,6 @@ body{
 .quiz-title{
     text-align: center;
     margin-top: 250px;
-    /* font-size: 600%; */
-    /* text-shadow: 13px 6px 3px #c9c7c7; */
 }
 
 .start-button{
@@ -24,7 +22,6 @@ body{
     padding: 10px 20px;
     border: none;
     outline: none;
-    /* background: transparent; */
     border-radius:13px;
     box-shadow: 5px 6px 3px #cccbcb;
     color: #000000;
@@ -36,10 +33,8 @@ body{
     color: #ff0000;
     background: #c2c2c2;
     border-bottom: 2px solid #494949;
-    /* cursor: url(hand.cur), pointer; */
     margin-bottom: 2px;
 }
-
 
 .quizimg2{
     display: flex;
@@ -56,13 +51,14 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 5%;
-    /* margin-bottom: 250px; */
 }
+
 .ans{
     width: 50%;
     max-width: 500px;
     height: 70px;
     font-size: 30px;
+    border-radius: 20px;
 }
 .ans-button{
     font-family: 'Kaisei HarunoUmi', serif;
@@ -70,6 +66,17 @@ body{
     height: 70px;
     margin-left: 10px;
     font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #df0000;
+    border-radius: 100vh;
+}
+.ans-button:hover {
+  color: #fff;
+  background: #fa0000;
 }
 
 .quiz2{
@@ -79,5 +86,3 @@ body{
     border-radius: 20px;
     box-shadow: 0px 0px 50px #979797;
 }
-
-

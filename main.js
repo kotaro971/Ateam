@@ -167,7 +167,7 @@ function result() {
     const btnAdd = document.createElement("button");
     btnAdd.style.position = "absolute";
     btnAdd.style.top = "400px";
-    btnAdd.style.left = "40%";
+    btnAdd.style.left = "43%";
     btnAdd.style.fontSize="50px";
     btnAdd.style.color="#b1921b";
     btnAdd.style.borderRight="4px solid #cea82c";
@@ -209,14 +209,40 @@ function result() {
 
 function resultUI() {
     const resultText = document.createElement("p");
-    resultText.innerHTML = "あなたが正解した数は" + answercount + "/10です。"
+    resultText.innerHTML = "あなたが正解した数は<br>" + answercount + "/10です。"
     document.body.appendChild(resultText);
     resultText.style.position = "absolute";
     resultText.style.fontSize="30px";
-    resultText.style.top = "400px";
-    resultText.style.left = "32%";
+    resultText.style.textAlign="center";
+    resultText.style.top = "350px";
+    resultText.style.left = "40%";
     resultText.style.justifyContent="center";
     
+    const frist = document.createElement("button");
+    frist.style.position = "absolute";
+    frist.innerHTML = "はじめからやる";
+    document.body.appendChild(frist);
+    frist.style.top = "520px";
+    frist.style.left = "45%";
+    frist.style.fontSize="25px";
+    frist.style.border="3px";
+    frist.style.borderRadius="20px";
+    frist.style.margin="20px 5px";
+    // frist.style.outline="none";
+    // frist.style.borderBottom= "5px solid #000000";
+    frist.style.backgroundColor="#c2c2c2";
+    frist.style.color="#fffff";
+    // frist.style.background="#c2c2c2";
+    // frist.style.borderBottom="2px solid #494949";
+    // frist.style.outline= "none";
+    frist.addEventListener('mouseover', function() {
+        btnAdd.style.marginTop= "3px";
+        frist.style.borderBottom= "2px solid #ff0000";
+        
+    });
+    frist.addEventListener(`click`, function () {
+        location.href = 'index.html';
+    });
 }
 
 
