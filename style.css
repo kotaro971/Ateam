@@ -1,34 +1,38 @@
-body{
+body {
     font-family: 'Kaisei HarunoUmi', serif;
 }
-.quiz{
+
+.quiz {
     border: solid 3px #be0000;
     margin: 50px;
     padding-bottom: 250px;
     border-radius: 20px;
     box-shadow: 0px 0px 50px #979797;
 }
-.quiz-title{
+
+.quiz-title {
     text-align: center;
     margin-top: 250px;
 }
 
-.start-button{
+.start-button {
     text-align: center;
 }
-.str-btn{
+
+.str-btn {
     font-size: 50px;
     font-family: 'Kaisei HarunoUmi', serif;
     padding: 10px 20px;
     border: none;
     outline: none;
-    border-radius:13px;
+    border-radius: 13px;
     box-shadow: 5px 6px 3px #cccbcb;
     color: #000000;
     background-color: #c2c2c2;
     border-bottom: 7px solid #494949;
 }
-.str-btn:hover{
+
+.str-btn:hover {
     margin-top: 3px;
     color: #ff0000;
     background: #c2c2c2;
@@ -36,31 +40,33 @@ body{
     margin-bottom: 2px;
 }
 
-.quizimg2{
+.quizimg2 {
     display: flex;
     justify-content: center;
     margin-top: 115px;
     padding-top: 0px;
 }
-.quizimg{
+
+.quizimg {
     width: auto;
     height: 50%;
 }
 
-.form{
+.form {
     display: flex;
     justify-content: center;
     margin-top: 5%;
 }
 
-.ans{
+.ans {
     width: 50%;
     max-width: 500px;
     height: 70px;
     font-size: 30px;
     border-radius: 20px;
 }
-.ans-button{
+
+.ans-button {
     font-family: 'Kaisei HarunoUmi', serif;
     font-size: 20px;
     height: 70px;
@@ -74,12 +80,13 @@ body{
     background-color: #df0000;
     border-radius: 100vh;
 }
+
 .ans-button:hover {
-  color: #fff;
-  background: #fa0000;
+    color: #fff;
+    background: #fa0000;
 }
 
-.quiz2{
+.quiz2 {
     border: solid 3px #be0000;
     margin: 50px;
     padding-bottom: 200px;

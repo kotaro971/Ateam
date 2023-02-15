@@ -222,18 +222,12 @@ function resultUI() {
     frist.style.border="3px";
     frist.style.borderRadius="20px";
     frist.style.margin="20px 5px";
-    // frist.style.outline="none";
-    // frist.style.borderBottom= "5px solid #000000";
     frist.style.backgroundColor="#c2c2c2";
     frist.style.color="#fffff";
-    // frist.style.background="#c2c2c2";
-    // frist.style.borderBottom="2px solid #494949";
-    // frist.style.outline= "none";
-    frist.addEventListener('mouseover', function() {
-        btnAdd.style.marginTop= "3px";
-        frist.style.borderBottom= "2px solid #ff0000";
-        
-    });
+    // frist.addEventListener('mouseover', function() {
+    //     btnAdd.style.marginTop= "3px";
+    //     frist.style.borderBottom= "2px solid #ff0000";
+    // });
     frist.addEventListener(`click`, function () {
         location.href = 'index.html';
     });
