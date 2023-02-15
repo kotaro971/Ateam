@@ -139,6 +139,8 @@ function judge() {
         if (count < 11) {
             answercount = answercount + 1;
             swal('正解です!');
+            let sound = new Audio("music/クイズ正解1.mp3");
+            sound.play()
             // window.alert("正解です!");
             document.getElementById("ans").value = '';
             console.log(count);
@@ -151,6 +153,9 @@ function judge() {
             swal("残念！正解は" + answerjudge[randamnum] + "です。");
             // window.alert("残念！正解は" + answerjudge[randamnum] + "です。");
             document.getElementById("ans").value = '';
+            let sound = new Audio("music/クイズ不正解1.mp3");
+            sound.play()
+
             console.log(count);
             return quest();
         }
@@ -163,6 +168,9 @@ function result() {
     document.querySelector(".quizimg").style.visibility = "hidden";
     document.querySelector(".ans").style.visibility = "hidden";
     document.querySelector(".ans-button").style.visibility = "hidden";
+
+
+
 
     const btnAdd = document.createElement("button");
     btnAdd.style.position = "absolute";
@@ -178,6 +186,10 @@ function result() {
     btnAdd.style.background= "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
     btnAdd.style.background= "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
     btnAdd.style.textShadow="-1px -1px 1px #ffffd9";
+
+    let sound = new Audio("music/ドラムロール.mp3");
+    sound.play()
+    sound.loop=true;
     
     btnAdd.addEventListener('mouseover', function() {
         btnAdd.style.marginTop= "3px";
@@ -197,12 +209,16 @@ function result() {
         btnAdd.style.background= "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
         btnAdd.style.background= "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
         btnAdd.style.textShadow="-1px -1px 1px #ffffd9";
+
+     
       });
 
     btnAdd.innerHTML = "結果発表";
     document.body.appendChild(btnAdd);
     btnAdd.addEventListener(`click`, function () {
+        sound.muted=true;
         btnAdd.style.visibility = "hidden";
+        
         resultUI();
     });
 }
@@ -234,6 +250,7 @@ function resultUI() {
     //     btnAdd.style.marginTop= "3px";
     //     frist.style.borderBottom= "2px solid #ff0000";
     // });
+
     frist.addEventListener(`click`, function () {
         location.href = 'index.html';
     });
