@@ -41,7 +41,7 @@ function audio1() {
         btnAdd.style.textShadow = "-1px -1px 1px #ffffd9";
     });
     document.body.appendChild(btnAdd);
-    btnAdd.innerHTML = "再生中";
+    btnAdd.innerHTML = "再生";
     btnAdd.addEventListener(`click`, function () {
         if (!Audio1.muted) {
             btnAdd.innerHTML = "停止中";
