@@ -90,7 +90,17 @@ var randamnum = 0;
 var randams = []
 
 
+
 quest();
+
+// audio1();
+
+// function audio1() {
+//     const Audio1 = document.getElementById('audio0');
+
+//     Audio1.play();
+//     //Audio1.loop=true;
+// }
 
 //入力フォーム　クリックでイベント発火
 const btn = document.getElementsByClassName('ans-button')[count].addEventListener('click', function () {
@@ -104,6 +114,7 @@ const btn = document.getElementsByClassName('ans-button')[count].addEventListene
 
 //問題を表示させる関数
 function quest() {
+
     if (count == 10) {
         result();
     }
@@ -112,6 +123,56 @@ function quest() {
         document.querySelector(".quizimg").src = "img/" + quiz[randamnum];
     }
 
+    const audio2 = new Audio("music/223_BPM142.mp3");
+    audio2.play();
+    audio2.loop = true;
+    const btnAdd = document.createElement("button");
+    btnAdd.style.position = "absolute";
+    btnAdd.style.top = "700px";
+    btnAdd.style.left = "41%";
+    btnAdd.style.fontSize = "50px";
+    btnAdd.style.color = "#b1921b";
+    btnAdd.style.borderRight = "4px solid #cea82c";
+    btnAdd.style.borderBottom = "10px solid #987c1e";
+    btnAdd.style.borderLeft = "4px solid #ffed8b";
+    btnAdd.style.borderRadius = 0;
+    btnAdd.style.background = "-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
+    btnAdd.style.background = "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+    btnAdd.style.background = "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+    btnAdd.style.textShadow = "-1px -1px 1px #ffffd9";
+
+    btnAdd.addEventListener('mouseover', function () {
+        btnAdd.style.marginTop = "3px";
+        btnAdd.style.color = "#b1921b";
+        btnAdd.style.borderRight = "4px solid #cea82c";
+        btnAdd.style.borderBottom = "7px solid #987c1e";
+        btnAdd.style.borderLeft = "4px solid #ffed8b";
+    });
+
+    btnAdd.addEventListener('mouseleave', function () {
+        btnAdd.style.marginTop = "-3px";
+        btnAdd.style.color = "#b1921b";
+        btnAdd.style.borderRight = "4px solid #cea82c";
+        btnAdd.style.borderBottom = "10px solid #987c1e";
+        btnAdd.style.borderLeft = "4px solid #ffed8b";
+        btnAdd.style.borderRadius = 0;
+        btnAdd.style.background = "-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
+        btnAdd.style.background = "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+        btnAdd.style.background = "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+        btnAdd.style.textShadow = "-1px -1px 1px #ffffd9";
+    });
+    document.body.appendChild(btnAdd);
+    btnAdd.innerHTML = "再生中";
+    btnAdd.addEventListener(`click`, function () {
+        if (!audio2.muted) {
+            btnAdd.innerHTML = "停止中";
+            audio2.muted = true;
+        }
+        else {
+            btnAdd.innerHTML = "再生中";
+            audio2.muted = false;
+        }
+    });
 
 }
 
@@ -170,49 +231,49 @@ function result() {
     btnAdd.style.position = "absolute";
     btnAdd.style.top = "400px";
     btnAdd.style.left = "43%";
-    btnAdd.style.fontSize="50px";
-    btnAdd.style.color="#b1921b";
-    btnAdd.style.borderRight="4px solid #cea82c";
-    btnAdd.style.borderBottom= "10px solid #987c1e";
-    btnAdd.style.borderLeft= "4px solid #ffed8b";
-    btnAdd.style.borderRadius= 0;
-    btnAdd.style.background="-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
-    btnAdd.style.background= "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
-    btnAdd.style.background= "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
-    btnAdd.style.textShadow="-1px -1px 1px #ffffd9";
+    btnAdd.style.fontSize = "50px";
+    btnAdd.style.color = "#b1921b";
+    btnAdd.style.borderRight = "4px solid #cea82c";
+    btnAdd.style.borderBottom = "10px solid #987c1e";
+    btnAdd.style.borderLeft = "4px solid #ffed8b";
+    btnAdd.style.borderRadius = 0;
+    btnAdd.style.background = "-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
+    btnAdd.style.background = "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+    btnAdd.style.background = "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+    btnAdd.style.textShadow = "-1px -1px 1px #ffffd9";
 
     let sound = new Audio("music/ドラムロール.mp3");
     sound.play()
-    sound.loop=true;
-    
-    btnAdd.addEventListener('mouseover', function() {
-        btnAdd.style.marginTop= "3px";
-        btnAdd.style.color= "#b1921b";
-        btnAdd.style.borderRight= "4px solid #cea82c";
-        btnAdd.style.borderBottom= "7px solid #987c1e";
-        btnAdd.style.borderLeft= "4px solid #ffed8b";
-    });
-    btnAdd.addEventListener('mouseleave', function() {
-        btnAdd.style.marginTop= "-3px";
-        btnAdd.style.color="#b1921b";
-        btnAdd.style.borderRight="4px solid #cea82c";
-        btnAdd.style.borderBottom= "10px solid #987c1e";
-        btnAdd.style.borderLeft= "4px solid #ffed8b";
-        btnAdd.style.borderRadius= 0;
-        btnAdd.style.background="-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
-        btnAdd.style.background= "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
-        btnAdd.style.background= "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
-        btnAdd.style.textShadow="-1px -1px 1px #ffffd9";
+    sound.loop = true;
 
-     
-      });
+    btnAdd.addEventListener('mouseover', function () {
+        btnAdd.style.marginTop = "3px";
+        btnAdd.style.color = "#b1921b";
+        btnAdd.style.borderRight = "4px solid #cea82c";
+        btnAdd.style.borderBottom = "7px solid #987c1e";
+        btnAdd.style.borderLeft = "4px solid #ffed8b";
+    });
+    btnAdd.addEventListener('mouseleave', function () {
+        btnAdd.style.marginTop = "-3px";
+        btnAdd.style.color = "#b1921b";
+        btnAdd.style.borderRight = "4px solid #cea82c";
+        btnAdd.style.borderBottom = "10px solid #987c1e";
+        btnAdd.style.borderLeft = "4px solid #ffed8b";
+        btnAdd.style.borderRadius = 0;
+        btnAdd.style.background = "-webkit-gradient(linear, right top, left top, from(#ffd75b), color-stop(30%, #fff5a0), color-stop(40%, #fffabe), color-stop(50%, #ffffdb), color-stop(70%, #fff5a0), to(#fdd456))";
+        btnAdd.style.background = "-webkit-linear-gradient(right, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+        btnAdd.style.background = "linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%)";
+        btnAdd.style.textShadow = "-1px -1px 1px #ffffd9";
+
+
+    });
 
     btnAdd.innerHTML = "結果発表";
     document.body.appendChild(btnAdd);
     btnAdd.addEventListener(`click`, function () {
-        sound.muted=true;
+        sound.muted = true;
         btnAdd.style.visibility = "hidden";
-        
+
         resultUI();
     });
 }
@@ -222,24 +283,24 @@ function resultUI() {
     resultText.innerHTML = "あなたが正解した数は<br>" + answercount + "/10です。"
     document.body.appendChild(resultText);
     resultText.style.position = "absolute";
-    resultText.style.fontSize="30px";
-    resultText.style.textAlign="center";
+    resultText.style.fontSize = "30px";
+    resultText.style.textAlign = "center";
     resultText.style.top = "350px";
     resultText.style.left = "40%";
-    resultText.style.justifyContent="center";
-    
+    resultText.style.justifyContent = "center";
+
     const frist = document.createElement("button");
     frist.style.position = "absolute";
     frist.innerHTML = "はじめからやる";
     document.body.appendChild(frist);
     frist.style.top = "520px";
     frist.style.left = "45%";
-    frist.style.fontSize="25px";
-    frist.style.border="3px";
-    frist.style.borderRadius="20px";
-    frist.style.margin="20px 5px";
-    frist.style.backgroundColor="#c2c2c2";
-    frist.style.color="#fffff";
+    frist.style.fontSize = "25px";
+    frist.style.border = "3px";
+    frist.style.borderRadius = "20px";
+    frist.style.margin = "20px 5px";
+    frist.style.backgroundColor = "#c2c2c2";
+    frist.style.color = "#fffff";
     // frist.addEventListener('mouseover', function() {
     //     btnAdd.style.marginTop= "3px";
     //     frist.style.borderBottom= "2px solid #ff0000";
